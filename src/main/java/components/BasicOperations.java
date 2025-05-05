@@ -1,8 +1,25 @@
 package components;
 
-public class BasicOperations {
+import java.util.Scanner;
 
-    public double add(double... numbers){
+public class BasicOperations{
+
+    public static double[] totalNum(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("HOW MANY NUMBERS WILL YOU OPERATE?");
+        int quantity = sc.nextInt();
+
+        double[] numbers = new double[quantity];
+
+        for (int i = 0; i < quantity; i++){
+            System.out.println("NUMBER " + (i + 1) + ": ");
+            numbers[i] = sc.nextDouble();
+        }
+
+        return numbers;
+    }
+
+    public static double add(double... numbers){
         double res = 0;
         for (double num : numbers){
             res += num;
@@ -10,32 +27,32 @@ public class BasicOperations {
         return res;
     }
 
-    public double minus(double... numbers){
-        double res = 0;
-        for (double num : numbers){
-            res -= num;
-        }
-        return res;
-    }
-
-    public double divide(double... numbers){
+    public static double minus(double... numbers) {
+        if (numbers.length == 0) return 0;
         double res = numbers[0];
-
-        if (numbers.length == 0){
-            System.out.println("INSERT AT LEAST ONE NUMBER");
-        }
-
-        for (int i = 0; i<numbers.length;i++){
-            if (numbers[0]==0){
-                System.out.println("CAN'T DIVIDE TO ZERO");
-            }else{
-                res /= numbers[i];
-            }
+        for (int i = 1; i < numbers.length; i++) {
+            res -= numbers[i];
         }
         return res;
     }
 
-    public double multiplicate(double... numbers){
+    public static double divide(double... numbers) {
+        if (numbers.length == 0) {
+            System.out.println("INSERT AT LEAST ONE NUMBER");
+            return 0;
+        }
+
+        double res = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] == 0) {
+                System.out.println("CAN'T DIVIDE BY ZERO");
+                return 0;
+            }
+            res /= numbers[i];
+        }
+        return res;
+    }
+    public static double multiplicate(double... numbers){
         double res = 1;
         for (double num : numbers){
             res *= num;

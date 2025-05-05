@@ -1,5 +1,6 @@
 package components;
 
+import java.io.Console;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -28,50 +29,44 @@ public class Menu {
                     break;
 
                 default:
-                    System.out.println("MINGITO PON LO QUE TE PIDO NO ME SEAS NENAZA");
+                    System.out.println("PLEASE SELECT A VALID OPTION");
             }
 
         }while (option!=3);
 
     }
 
-    public void menuBasicOperations(){
+    private void menuBasicOperations(){
         do {
             System.out.println("------------------------------------------------");
             System.out.println("SELECT ONE OPERATION");
             System.out.println("1. ADD");
-            System.out.println("2. MINUS");
-            System.out.println("3. DIVIDE");
-            System.out.println("4. MULTIPLICATE");
-            System.out.println("5. SOLVE ECUATION 2nd GRADE");
-            System.out.println("5. SOLVE ECUATION 2nd GRADE");
-            System.out.println("5. SOLVE ECUATION 2nd GRADE");
+            System.out.println("2. SUBSTRACTING");
+            System.out.println("3. DIVIDING");
+            System.out.println("4. MULTIPLYING");
+            System.out.println("5. PERCENTAGES");
+            System.out.println("5. POWERS");
+            System.out.println("5. EXPONENTS");
             System.out.println("5. EXIT");
             System.out.println("------------------------------------------------");
 
             option = sc.nextInt();
-
+            double[] numbersToOperate = BasicOperations.totalNum();
             switch (option){
                 case 1:
-                    menuBasicOperations();
+                    double resultAdd = BasicOperations.add(numbersToOperate);
+                    System.out.println("RESULT OF ADDITION: " + resultAdd);
                     break;
 
                 case 2:
                     break;
 
                 default:
-                    System.out.println("MINGITO PON LO QUE TE PIDO NO ME SEAS NENAZA");
+                    System.out.println("PLEASE SELECT A VALID OPTION");
             }
 
         }while (option!=3);
 
     }
 
-    public void menuFinishedOperation(boolean option){
-        if (option==true){
-            System.out.println("WANT TO DO ANY OTHER OPERATION?");
-        }else{
-            System.out.println("GOODBYE");
-        }
-    }
 }
