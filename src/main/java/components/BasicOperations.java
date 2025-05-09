@@ -60,7 +60,22 @@ public class BasicOperations{
         return res;
     }
 
+    public static double percentagesOf(double x, double y){
+        double res = (x == 0 || y == 0) ? 0 : y * ((x/100) / 100);
+        return res;
+    }
 
-
+    public static double power(double x, double y){
+        if (x == 0 && y == 0){
+            System.out.println("IS AN INDEFINITED RESOLUTION");
+            return 0;
+        }else if(x <= 0 || (y % 1 != 0)){
+            System.out.println("IS AN IMAGINARY RESOLUTION");
+            return 0;
+        }else{
+            double result = Math.pow(x,y);
+            return result;
+        }
+    }
 
 }
