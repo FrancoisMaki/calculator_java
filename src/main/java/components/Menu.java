@@ -42,17 +42,19 @@ public class Menu {
             System.out.println("2. SUBSTRACTING");
             System.out.println("3. DIVIDING");
             System.out.println("4. MULTIPLYING");
-            System.out.println("5. PERCENTAGES");
-            System.out.println("6. POWERS");
-            System.out.println("7. EXPONENTS");
-            System.out.println("5. EXIT");
+            System.out.println("5. PERCENTAGE");
+            System.out.println("6. POWER");
+            System.out.println("7. ROOT");
+            System.out.println("8. LOGARITHM");
+            System.out.println("9. EXIT");
             System.out.println("------------------------------------------------");
 
             option = sc.nextInt();
-            double[] numbersToOperate;
-            double result;
-            double x;
-            double y;
+            Double[] numbersToOperate;
+            Double result;
+            Double x;
+            Double y;
+            Double z;
             switch (option){
                 case 1:
                     numbersToOperate = BasicOperations.totalNum();
@@ -97,6 +99,18 @@ public class Menu {
                     break;
 
                 case 7:
+                    System.out.println("INSERT THE RADICAND");
+                    x = sc.nextDouble();
+                    System.out.println("INSERT THE RADICAND EXPONENT");
+                    y = sc.nextDouble();
+                    System.out.println("INSERT THE INDEX");
+                    z = sc.nextDouble();
+                    result = BasicOperations.root(x,y,z);
+                    if (result!=null)
+                        System.out.println("RESULT OF ROOT: " + Math.round(result));
+                    break;
+
+                case 8:
                     System.out.println("INSERT THE PORCENTAGE");
                     x = sc.nextDouble();
                     System.out.println("INSERT THE INITIAL QUANTITY");
