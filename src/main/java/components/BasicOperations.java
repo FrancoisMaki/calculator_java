@@ -101,6 +101,4 @@ public class BasicOperations{
             return result;
         }
     }
-
-
 }

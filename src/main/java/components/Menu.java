@@ -45,16 +45,15 @@ public class Menu {
             System.out.println("5. PERCENTAGE");
             System.out.println("6. POWER");
             System.out.println("7. ROOT");
-            System.out.println("8. LOGARITHM");
-            System.out.println("9. EXIT");
+            System.out.println("8. EXIT");
             System.out.println("------------------------------------------------");
 
             option = sc.nextInt();
             Double[] numbersToOperate;
             Double result;
-            Double x;
-            Double y;
-            Double z;
+            double x;
+            double y;
+            double z;
             switch (option){
                 case 1:
                     numbersToOperate = BasicOperations.totalNum();
@@ -110,20 +109,11 @@ public class Menu {
                         System.out.println("RESULT OF ROOT: " + Math.round(result));
                     break;
 
-                case 8:
-                    System.out.println("INSERT THE PORCENTAGE");
-                    x = sc.nextDouble();
-                    System.out.println("INSERT THE INITIAL QUANTITY");
-                    y = sc.nextDouble();
-                    result = BasicOperations.percentagesOf(x, y);
-                    System.out.println("RESULT OF MULTIPLICATE: " + (result*100) + "%");
-                    break;
-
                 default:
                     System.out.println("PLEASE SELECT A VALID OPTION");
             }
 
-        }while (option!=3);
+        }while (option!=8);
 
     }
 
